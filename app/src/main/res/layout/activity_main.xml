@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="标题"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--
+    mode：设置抽屉的打开方向，可以设置左右或同时left|right
+    behindOffset：设置打开抽屉后主界面距离屏幕的距离
+    fadeEnabled：允许淡入淡出
+    fadeDegree：淡入淡出的度数，这个在fadeEnable = true时有效
+    shadowDrawable：阴影的图片
+    shadowWidth：阴影宽度，这里要在dimen中设置
+    touchModeAbove：滑动打开抽屉的范围，可以选择："fullscreen"=全屏，"margin"=边缘打开
+    viewAbove：在主页面上方的图片
+    viewBehind：在抽屉界面上方显示的图片。example:sliding:viewBehind="@layout/above_layout"
+     -->
+    <yu.peng.viewpager2.SlidingMenu
+        xmlns:sliding="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingmenulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sliding:behindOffset="@dimen/slidingmenu_offset"
+        sliding:fadeDegree="0.5"
+        sliding:fadeEnabled="true"
+        sliding:mode="left"
+        sliding:shadowWidth="@dimen/slidingmenu_shadow_width"
+        sliding:touchModeAbove="fullscreen"
+        sliding:viewAbove="@layout/content_frame"
+        sliding:viewBehind="@layout/menu_frame"/>
+
+</LinearLayout>
